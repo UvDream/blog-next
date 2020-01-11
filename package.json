@@ -4,13 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "start": "next start -p $PORT",
+    "build": "next build && PORT=3000 npm start",
     "export": "next export"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@babel/core": "^7.7.7",
     "@zeit/next-css": "^1.0.1",
+=======
+>>>>>>> aa1b40f7bf007cf5a91519c3bc3ec04073092942
     "@zeit/next-less": "^1.0.1",
     "antd": "^3.26.6",
     "axios": "^0.19.0",
@@ -28,6 +31,7 @@
     "webpack-filter-warnings-plugin": "^1.2.1"
   },
   "devDependencies": {
+    "@zeit/next-css": "^1.0.1",
     "next-compose-plugins": "^2.2.0"
   }
 }

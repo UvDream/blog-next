@@ -1,0 +1,1 @@
+{"ast":null,"code":"import App from \"next/app\"; // import \"antd/dist/antd.less\"\n\nimport \"../static/style/pages/common.less\";\nexport default App;","map":null,"metadata":{},"sourceType":"module"}

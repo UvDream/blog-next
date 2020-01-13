@@ -12,14 +12,14 @@ import "../static/style/pages/github.less";
 const Github = () => {
   const myList = [
     {
-      title: "这是标题",
+      title: "flutter-uvdream",
       url: "https://github.com",
       desc: "这是描述",
       star: "12",
       lang: "js"
     },
     {
-      title: "这是标题",
+      title: "blog-next",
       url: "https://github.com",
       desc: "这是描述",
       star: "12",
@@ -52,8 +52,14 @@ const Github = () => {
             renderItem={item => (
               <List.Item>
                 <Row style={{ width: "100%" }}>
-                  <Col span={20} style={{ fontSize: "1.2rem" }}>
-                    {item.title}
+                  <Col
+                    span={20}
+                    style={{ fontSize: "1.2rem" }}
+                    className="github-header-title"
+                  >
+                    <a href={item.url} target="_blank">
+                      {item.title}
+                    </a>
                   </Col>
                   <Col span={4} style={{ textAlign: "right" }}>
                     <a href={item.url} target="_blank">

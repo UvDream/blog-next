@@ -79,7 +79,7 @@ const ArticleDetail = props => {
           </Affix>
         </Col>
       </Row>
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 };

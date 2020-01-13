@@ -40,8 +40,16 @@ const Header = props => {
             </Menu.Item>
 
             <Menu.Item key="1">
-              <Icon type="tags" />
-              归档
+              <Link
+                href={{
+                  pathname: "/articleTypes"
+                }}
+              >
+                <a>
+                  <Icon type="tags" />
+                  归档
+                </a>
+              </Link>
             </Menu.Item>
             <Menu.Item key="2">
               <Icon type="github" />

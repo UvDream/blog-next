@@ -9,6 +9,7 @@ import Article from "../api/article/index";
 import marked from "marked";
 import hljs from "highlight.js";
 import CountUp from "react-countup";
+import Footer from "../components/Footer";
 
 import "../static/style/pages/theme.less";
 import "../static/style/pages/index.less";
@@ -142,6 +143,7 @@ const Home = () => {
           <Author />
         </Col>
       </Row>
+      <Footer />
     </div>
   );
 };

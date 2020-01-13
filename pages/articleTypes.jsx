@@ -4,6 +4,7 @@ import Author from "../components/Author";
 import Head from "next/head";
 import { Row, Col } from "antd";
 import ReactWordcloud from "react-wordcloud";
+import Footer from "../components/Footer";
 import "../static/style/pages/article-types.less";
 const ArticleTypes = () => {
   const words = [
@@ -49,6 +50,7 @@ const ArticleTypes = () => {
           <Author />
         </Col>
       </Row>
+      <Footer />
     </div>
   );
 };

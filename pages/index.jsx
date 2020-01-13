@@ -4,7 +4,7 @@ import Head from "next/head";
 import dayjs from "dayjs";
 import Author from "../components/Author";
 import Link from "next/link";
-import { Row, Col, List, Icon, Skeleton } from "antd";
+import { Row, Col, List, Icon, Skeleton, Pagination } from "antd";
 import Article from "../api/article/index";
 import marked from "marked";
 import hljs from "highlight.js";
@@ -31,21 +31,33 @@ const Home = () => {
   });
   const [articleList, setArticleList] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(10);
+  const [totalSize, setTotalSize] = useState();
   useEffect(() => {
-    getList();
+    getList(1, 10);
   }, []);
   // 获取列表
-  const getList = () => {
+  const getList = (page, pageSize) => {
     setLoading(true);
-
-    Article.list({ page: "1", page_size: "10" }).then(res => {
-      if (res.code === 200) {
-        console.log("获取列表数据");
-        console.log(res);
-        setLoading(false);
-        setArticleList(res.data.article_list);
+    Article.list({ page: String(page), page_size: String(pageSize) }).then(
+      res => {
+        if (res.code === 200) {
+          console.log("获取列表数据");
+          console.log(res);
+          setLoading(false);
+          setPage(res.data.page);
+          setPageSize(res.data.pageSize);
+          setTotalSize(res.data.totalSize);
+          setArticleList(res.data.article_list);
+        }
       }
-    });
+    );
+  };
+  const paginationChange = (page, pageSize) => {
+    setPage(page);
+    setPageSize(pageSize);
+    getList(page, pageSize);
   };
 
   return (
@@ -142,6 +154,34 @@ const Home = () => {
         >
           <Author />
         </Col>
+      </Row>
+      <Row className="home-main common-main" type="flex" justify="center">
+        <Col
+          xs={24}
+          sm={24}
+          md={16}
+          lg={18}
+          xl={14}
+          style={{ textAlign: "right" }}
+        >
+          <Pagination
+            total={totalSize}
+            showSizeChanger
+            showTotal={total => `总共 ${total} /条数据`}
+            pageSize={pageSize}
+            onShowSizeChange={paginationChange}
+            onChange={paginationChange}
+            defaultCurrent={page}
+          />
+        </Col>
+        <Col
+          className="home-main-right common-right"
+          xs={0}
+          sm={0}
+          md={7}
+          lg={5}
+          xl={4}
+        ></Col>
       </Row>
       <Footer />
     </div>

@@ -162,7 +162,13 @@ const Home = () => {
           md={16}
           lg={18}
           xl={14}
-          style={{ textAlign: "right" }}
+          style={{
+            textAlign: "right",
+            backgroundColor: "#fff",
+            padding: "1rem 0",
+            borderRadius: ".5rem",
+            border: ".1rem solid #e8e8e8"
+          }}
         >
           <Pagination
             total={totalSize}

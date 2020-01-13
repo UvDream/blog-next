@@ -52,12 +52,28 @@ const Header = props => {
               </Link>
             </Menu.Item>
             <Menu.Item key="2">
-              <Icon type="github" />
-              我的开源
+              <Link
+                href={{
+                  pathname: "/github"
+                }}
+              >
+                <a>
+                  <Icon type="github" />
+                  我的开源
+                </a>
+              </Link>
             </Menu.Item>
             <Menu.Item key="3">
-              <Icon type="user" />
-              关于我
+              <Link
+                href={{
+                  pathname: "/aboutMe"
+                }}
+              >
+                <a>
+                  <Icon type="user" />
+                  关于我
+                </a>
+              </Link>
             </Menu.Item>
           </Menu>
         </Col>

@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Head from "next/head";
 import Footer from "../components/Footer";
 import Author from "../components/Author";
+import randomColor from "randomcolor";
 
 import "../static/style/pages/github.less";
 
@@ -67,7 +68,11 @@ const Github = () => {
                   {item.desc}
                 </div>
                 <div>
-                  <Icon type="tag" theme="filled" />
+                  <Icon
+                    type="tag"
+                    theme="filled"
+                    style={{ color: randomColor() }}
+                  />
                   <span className="github-span">{item.lang}</span>
                   <Icon type="star" theme="filled" />
                   <span className="github-span">{item.star}</span>

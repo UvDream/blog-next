@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../static/style/components/header.less";
 import { Row, Col, Menu, Icon } from "antd";
+import randomColor from "randomcolor";
 
 import Link from "next/link";
 
@@ -19,7 +20,9 @@ const Header = props => {
             }}
           >
             <a>
-              <span className="header-logo">U世界的V梦想</span>
+              <span className="header-logo" style={{ color: randomColor() }}>
+                U世界的V梦想
+              </span>
               <span className="header-text">不专情前端开发的前端工程师</span>
             </a>
           </Link>

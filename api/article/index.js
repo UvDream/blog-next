@@ -13,6 +13,14 @@ const Article = {
             method: "GET",
             params
         });
+    },
+    // 标签云
+    words:params=>{
+        return request({
+            url: "/article/words",
+            method: "GET",
+            params
+        });
     }
 }
 export default Article;

@@ -1,26 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Author from "../components/Author";
 import Head from "next/head";
 import { Row, Col } from "antd";
 import ReactWordcloud from "react-wordcloud";
 import Footer from "../components/Footer";
+import Article from "../api/article/index";
 import "../static/style/pages/article-types.less";
 const ArticleTypes = () => {
-  const words = [
-    {
-      text: "前端",
-      value: 6
-    },
-    {
-      text: "go语言",
-      value: 11
-    },
-    {
-      text: "flutter",
-      value: 20
-    }
-  ];
+  useEffect(() => {
+    getWords();
+  }, []);
+  const [words, setWords] = useState([]);
+  // 获取标签云
+  const getWords = () => {
+    Article.words().then(res => {
+      if (res.code === 200) {
+        setWords(res.data);
+      }
+    });
+  };
   return (
     <div className="types">
       <Head>

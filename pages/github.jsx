@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Col, List, Icon, Button } from "antd";
 
 import Header from "../components/Header";
@@ -6,26 +6,23 @@ import Head from "next/head";
 import Footer from "../components/Footer";
 import Author from "../components/Author";
 import randomColor from "randomcolor";
+import Others from "../api/other/index";
 
 import "../static/style/pages/github.less";
 
 const Github = () => {
-  const myList = [
-    {
-      title: "flutter-uvdream",
-      url: "https://github.com",
-      desc: "这是描述",
-      star: "12",
-      lang: "js"
-    },
-    {
-      title: "blog-next",
-      url: "https://github.com",
-      desc: "这是描述",
-      star: "12",
-      lang: "js"
-    }
-  ];
+  const [tableData, setTableData] = useState();
+  useEffect(() => {
+    getList();
+  }, []);
+  // 获取列表
+  const getList = () => {
+    Others.list().then(res => {
+      if (res.code === 200) {
+        setTableData(res.data);
+      }
+    });
+  };
   return (
     <div className="github">
       <Head>
@@ -48,7 +45,7 @@ const Github = () => {
           <List
             header={<div className="github-title">我在github上的开源项目</div>}
             itemLayout="vertical"
-            dataSource={myList}
+            dataSource={tableData}
             renderItem={item => (
               <List.Item>
                 <Row style={{ width: "100%" }}>
@@ -58,7 +55,7 @@ const Github = () => {
                     className="github-header-title"
                   >
                     <a href={item.url} target="_blank">
-                      {item.title}
+                      {item.name}
                     </a>
                   </Col>
                   <Col span={4} style={{ textAlign: "right" }}>
@@ -71,7 +68,7 @@ const Github = () => {
                   </Col>
                 </Row>
                 <div style={{ color: "#ccc", margin: ".5rem 0" }}>
-                  {item.desc}
+                  {item.desc === "" ? "暂无描述~" : item.desc}
                 </div>
                 <div>
                   <Icon
@@ -79,11 +76,13 @@ const Github = () => {
                     theme="filled"
                     style={{ color: randomColor() }}
                   />
-                  <span className="github-span">{item.lang}</span>
+                  <span className="github-span">{item.language}</span>
                   <Icon type="star" theme="filled" />
                   <span className="github-span">{item.star}</span>
                   <Icon type="heart" theme="filled" style={{ color: "red" }} />
-                  <span className="github-span">维护</span>
+                  <span className="github-span">
+                    {item.status === "0" ? "维护" : "结束"}
+                  </span>
                 </div>
               </List.Item>
             )}

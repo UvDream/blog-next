@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, List, Icon, Button } from "antd";
+import { Row, Col, List, Icon, Button, Select } from "antd";
 
 import Header from "../components/Header";
 import Head from "next/head";
@@ -9,7 +9,6 @@ import randomColor from "randomcolor";
 import Others from "../api/other/index";
 
 import "../static/style/pages/github.less";
-
 const Github = () => {
   const [tableData, setTableData] = useState();
   useEffect(() => {
@@ -78,7 +77,9 @@ const Github = () => {
                   />
                   <span className="github-span">{item.language}</span>
                   <Icon type="star" theme="filled" />
-                  <span className="github-span">{item.star}</span>
+                  <span className="github-span">
+                    {item.star == "" ? 0 : item.star}
+                  </span>
                   <Icon type="heart" theme="filled" style={{ color: "red" }} />
                   <span className="github-span">
                     {item.status === "0" ? "维护" : "结束"}

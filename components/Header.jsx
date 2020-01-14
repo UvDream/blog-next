@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../static/style/components/header.less";
 import { Row, Col, Menu, Icon } from "antd";
+import randomColor from "randomcolor";
 
 import Link from "next/link";
 
@@ -19,7 +20,9 @@ const Header = props => {
             }}
           >
             <a>
-              <span className="header-logo">U世界的V梦想</span>
+              <span className="header-logo" style={{ color: randomColor() }}>
+                U世界的V梦想
+              </span>
               <span className="header-text">不专情前端开发的前端工程师</span>
             </a>
           </Link>
@@ -40,16 +43,40 @@ const Header = props => {
             </Menu.Item>
 
             <Menu.Item key="1">
-              <Icon type="tags" />
-              归档
+              <Link
+                href={{
+                  pathname: "/articleTypes"
+                }}
+              >
+                <a>
+                  <Icon type="tags" />
+                  归档
+                </a>
+              </Link>
             </Menu.Item>
             <Menu.Item key="2">
-              <Icon type="github" />
-              我的开源
+              <Link
+                href={{
+                  pathname: "/github"
+                }}
+              >
+                <a>
+                  <Icon type="github" />
+                  我的开源
+                </a>
+              </Link>
             </Menu.Item>
             <Menu.Item key="3">
-              <Icon type="user" />
-              关于我
+              <Link
+                href={{
+                  pathname: "/aboutMe"
+                }}
+              >
+                <a>
+                  <Icon type="user" />
+                  关于我
+                </a>
+              </Link>
             </Menu.Item>
           </Menu>
         </Col>

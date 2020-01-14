@@ -1,32 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { Row, Col, List, Icon, Skeleton, Pagination } from "antd";
+
 import Header from "../components/Header";
-import Author from "../components/Author";
 import Head from "next/head";
-import { Row, Col } from "antd";
-import ReactWordcloud from "react-wordcloud";
 import Footer from "../components/Footer";
-import Article from "../api/article/index";
-import "../static/style/pages/article-types.less";
-const ArticleTypes = () => {
-  useEffect(() => {
-    getWords();
-  }, []);
-  const [words, setWords] = useState([]);
-  // 获取标签云
-  const getWords = () => {
-    Article.words().then(res => {
-      if (res.code === 200) {
-        setWords(res.data);
-      }
-    });
-  };
+import Author from "../components/Author";
+
+import "../static/style/pages/about-me.less";
+
+const AboutMe = () => {
   return (
-    <div className="types">
+    <div className="about">
       <Head>
-        <title>文章分类</title>
+        <title>关于我</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Header status={"1"}></Header>
       <Row className="home-main common-main" type="flex" justify="center">
         <Col
           className="home-main-left common-left"
@@ -36,7 +24,7 @@ const ArticleTypes = () => {
           lg={18}
           xl={14}
         >
-          <ReactWordcloud words={words} />
+          这就是我!
         </Col>
         <Col
           className="home-main-right common-right"
@@ -49,8 +37,10 @@ const ArticleTypes = () => {
           <Author />
         </Col>
       </Row>
+      <Header status={"3"}></Header>
       <Footer />
     </div>
   );
 };
-export default ArticleTypes;
+
+export default AboutMe;

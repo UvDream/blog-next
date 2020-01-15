@@ -21,7 +21,7 @@ const ArticleTypes = () => {
     });
   };
   return (
-    <div className="types">
+    <div className="types" style={{ marginTop: "4.5rem" }}>
       <Head>
         <title>文章分类</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />

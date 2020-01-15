@@ -61,7 +61,7 @@ const Home = () => {
   };
 
   return (
-    <div className="home">
+    <div className="home" style={{ marginTop: "4.5rem" }}>
       <Head>
         <title>文章列表</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />

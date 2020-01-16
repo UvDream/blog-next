@@ -10,7 +10,7 @@ import "../static/style/pages/about-me.less";
 
 const AboutMe = () => {
   return (
-    <div className="about">
+    <div className="about" style={{ marginTop: "4.5rem" }}>
       <Head>
         <title>关于我</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />

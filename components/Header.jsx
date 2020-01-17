@@ -13,7 +13,7 @@ const Header = props => {
   return (
     <div className="header">
       <Row type="flex" justify="center" align="middle">
-        <Col xs={24} sm={24} md={10} lg={15} xl={12}>
+        <Col xs={24} sm={24} md={10} lg={15} xl={12} className="header-title">
           <Link
             href={{
               pathname: "/"

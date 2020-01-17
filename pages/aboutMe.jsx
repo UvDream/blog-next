@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Head from "next/head";
 import Footer from "../components/Footer";
 import Author from "../components/Author";
+import AboutMeDetail from "../components/AboutMe";
 
 import "../static/style/pages/about-me.less";
 
@@ -24,7 +25,7 @@ const AboutMe = () => {
           lg={18}
           xl={14}
         >
-          这就是我!
+          <AboutMeDetail />
         </Col>
         <Col
           className="home-main-right common-right"

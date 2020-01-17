@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, List, Icon, Button, Select } from "antd";
+import { Row, Col, List, Icon, Button, Tag } from "antd";
 
 import Header from "../components/Header";
 import Head from "next/head";
@@ -82,7 +82,18 @@ const Github = () => {
                   </span>
                   <Icon type="heart" theme="filled" style={{ color: "red" }} />
                   <span className="github-span">
-                    {item.status === "0" ? "维护" : "结束"}
+                    {(() => {
+                      switch (item.status) {
+                        case "0":
+                          return <span style={{ color: "orange" }}>维护</span>;
+                        case "1":
+                          return <span style={{ color: "green" }}>进行中</span>;
+                        case "2":
+                          return <span style={{ color: "#52c41a" }}>完结</span>;
+                        case "3":
+                          return <span style={{ color: "red" }}>暂停</span>;
+                      }
+                    })()}
                   </span>
                 </div>
               </List.Item>

@@ -9,6 +9,8 @@ import Footer from "../components/Footer";
 import marked from "marked";
 import hljs from "highlight.js";
 import dayjs from "dayjs";
+import MarkdownIt from "markdown-it";
+import emoji from "markdown-it-emoji";
 import "../static/style/pages/theme.less";
 import "../static/style/pages/article-detail.less";
 
@@ -33,6 +35,17 @@ const ArticleDetail = props => {
     return `<a id="${anchor}" href="#${anchor}" class="anchor-fix"><h${level}>${text}</h${level}></a>\n`;
   };
   let html = marked(props.article_content);
+  // let html = "";
+  // let mdParser = new MarkdownIt({
+  //   html: true,
+  //   linkify: true,
+  //   typographer: true,
+  //   highlight: function(code) {
+  //     return hljs.highlightAuto(code).value;
+  //   }
+  // }).use(emoji);
+  // html = mdParser.render(props.article_content);
+
   return (
     <div className="detail">
       <BackTop />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Head from "next/head";
 import Header from "../components/Header";
 import { Row, Col, Icon, Affix, BackTop } from "antd";
@@ -6,14 +6,21 @@ import Author from "../components/Author";
 import Article from "../api/article/index";
 import Tocify from "../components/tocify.tsx";
 import Footer from "../components/Footer";
-import marked from "marked";
+import marked from "./marked";
 import hljs from "highlight.js";
 import dayjs from "dayjs";
+import ReactDOM from "react-dom";
 
 import "../static/style/pages/theme.less";
 import "../static/style/pages/article-detail.less";
 
 const ArticleDetail = props => {
+  useEffect(() => {
+    document.getElementById("copy").onclick = function(e) {
+      console.log(e.target.parentNode.children[1]);
+    };
+    console.log(document.getElementById("copy"));
+  }, []);
   const tocify = new Tocify();
   const renderer = new marked.Renderer();
   marked.setOptions({

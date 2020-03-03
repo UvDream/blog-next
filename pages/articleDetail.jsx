@@ -36,7 +36,7 @@ const ArticleDetail = props => {
 
   // renderer.code = (code, language, isEscaped) => {
   //   let hled = hljs.highlightAuto(code).value;
-  //   return `<pre class="hljs"><code class="${language}">${hled}</code></pre>`;
+  //   return `<pre class="hljs" ><code class="${language}">${hled}</code></pre>`;
   // };
 
   let html = marked(props.article_content);
@@ -45,7 +45,7 @@ const ArticleDetail = props => {
     <div className="detail">
       <BackTop />
       <Head>
-        <title>详情</title>
+        <title>{props.title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Header></Header>

@@ -898,7 +898,7 @@
       }
 
       if (!lang) {
-        return '<pre><span  id="copy">复制</span><code  class="lang">' + (escaped ? _code : escape$2(_code, true)) + '</code></pre>';
+        return '<pre><span  id="copy" class="copy">复制<span style="display: none;">' + _code + '</span></span><code  class="lang">' + (escaped ? _code : escape$2(_code, true)) + '</code></pre>';
       }
 
       return '<pre><code class="' + this.options.langPrefix + escape$2(lang, true) + '">' + (escaped ? _code : escape$2(_code, true)) + '</code></pre>\n';
@@ -968,7 +968,7 @@
     };
 
     _proto.codespan = function codespan(text) {
-      return '<span  id="copy">复制</span><code  >' + text + '</code>';
+      return '<span onclick="this.codeClick(this.parentNode.children[1])" id="copy" class="copy">复制<span style="display: none;">' + text + '</span></span><code  >' + text + '</code>';
     };
 
     _proto.br = function br() {

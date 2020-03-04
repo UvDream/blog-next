@@ -6,7 +6,7 @@ import Author from "../components/Author";
 import Article from "../api/article/index";
 import Tocify from "../components/tocify.tsx";
 import Footer from "../components/Footer";
-import marked from "./marked";
+import marked from "marked";
 import hljs from "highlight.js";
 import dayjs from "dayjs";
 import ReactDOM from "react-dom";
@@ -16,11 +16,17 @@ import "../static/style/pages/article-detail.less";
 
 const ArticleDetail = props => {
   useEffect(() => {
-    document.getElementById("copy").onclick = function(e) {
-      console.log(e.target.parentNode.children[1]);
-    };
-    console.log(document.getElementById("copy"));
+    // document.getElementById("copy").onclick = function(e) {
+    //   console.log(e.target.childNodes[1].innerText);
+    // };
+    let b = document.getElementsByClassName("copy");
+    for (let i = 0; i < b.length; i++) {
+      b[i].onclick = e => {
+        console.log(e.target.children[0].innerHTML);
+      };
+    }
   }, []);
+
   const tocify = new Tocify();
   const renderer = new marked.Renderer();
   marked.setOptions({
@@ -40,11 +46,18 @@ const ArticleDetail = props => {
     const anchor = tocify.add(text, level);
     return `<a id="${anchor}" href="#${anchor}" class="anchor-fix"><h${level}>${text}</h${level}></a>\n`;
   };
-
-  // renderer.code = (code, language, isEscaped) => {
-  //   let hled = hljs.highlightAuto(code).value;
-  //   return `<pre class="hljs" ><code class="${language}">${hled}</code></pre>`;
-  // };
+  // 重写代码块
+  renderer.code = (code, language, isEscaped) => {
+    // let hled = hljs.highlightAuto(code).value;
+    // return `<pre class="hljs" ><code class="${language}">${hled}</code></pre>`;
+    return (
+      '<pre class="hljs" ><span  id="copy" class="copy">复制代码<span style="display: none;">' +
+      code +
+      '</span></span><code  class="${language}"  >' +
+      hljs.highlightAuto(code).value +
+      "</code></pre>"
+    );
+  };
 
   let html = marked(props.article_content);
 

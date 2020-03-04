@@ -6,7 +6,7 @@ import "../static/style/components/footer.less";
 const Footer = () => {
   return (
     <div className="footer">
-      <div>By wangzhongjie</div>
+      {/* <div>By wangzhongjie</div> */}
       <div style={{ marginTop: "1rem" }}>
         <Link href="https://github.com/UvDream">
           <a>
@@ -14,6 +14,7 @@ const Footer = () => {
           </a>
         </Link>
       </div>
+      <div>系统由Golang+React+Ant Design驱动 By wangzhongjie</div>
     </div>
   );
 };

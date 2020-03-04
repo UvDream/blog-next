@@ -9,7 +9,6 @@ import Footer from "../components/Footer";
 import marked from "marked";
 import hljs from "highlight.js";
 import dayjs from "dayjs";
-import ReactDOM from "react-dom";
 
 import "../static/style/pages/theme.less";
 import "../static/style/pages/article-detail.less";
@@ -53,8 +52,6 @@ const ArticleDetail = props => {
   };
   // 重写代码块
   renderer.code = (code, language, isEscaped) => {
-    // let hled = hljs.highlightAuto(code).value;
-    // return `<pre class="hljs" ><code class="${language}">${hled}</code></pre>`;
     return (
       '<pre class="hljs" ><span  id="copy" class="copy">复制代码<span style="display: none;">' +
       code +

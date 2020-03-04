@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
 import Header from "../components/Header";
-import { Row, Col, Icon, Affix, BackTop } from "antd";
+import { Row, Col, Icon, Affix, BackTop, message } from "antd";
 import Author from "../components/Author";
 import Article from "../api/article/index";
 import Tocify from "../components/tocify.tsx";
@@ -16,13 +16,18 @@ import "../static/style/pages/article-detail.less";
 
 const ArticleDetail = props => {
   useEffect(() => {
-    // document.getElementById("copy").onclick = function(e) {
-    //   console.log(e.target.childNodes[1].innerText);
-    // };
-    let b = document.getElementsByClassName("copy");
-    for (let i = 0; i < b.length; i++) {
-      b[i].onclick = e => {
-        console.log(e.target.children[0].innerHTML);
+    let copyText = document.getElementsByClassName("copy");
+    for (let i = 0; i < copyText.length; i++) {
+      copyText[i].onclick = e => {
+        // console.log(e.target.children[0].innerHTML);
+        var oInput = document.createElement("input");
+        oInput.value = e.target.children[0].innerHTML;
+        document.body.appendChild(oInput);
+        oInput.select();
+        document.execCommand("Copy");
+        oInput.className = "oInput";
+        oInput.style.display = "none";
+        message.success("复制代码成功!");
       };
     }
   }, []);

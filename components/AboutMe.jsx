@@ -18,7 +18,7 @@ const AboutMeDetail = () => {
       </div>
       <Divider>个人经历</Divider>
       <div style={{ padding: "2rem 2rem" }}>
-        <Collapse accordion activeKey={5}>
+        <Collapse defaultActiveKey={["5"]}>
           <Panel header="2016.7-2016.10" key="1">
             <p>公司:上汽通用有限公司</p>
             <p>职位:前端工程师</p>

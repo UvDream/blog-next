@@ -89,30 +89,71 @@
     color: #75715e;
 }
 
-table.hovertable {
-    font-family    : verdana, arial, sans-serif;
-    font-size      : 11px;
-    color          : #333333;
-    border-width   : 1px;
-    border-color   : #999999;
-    border-collapse: collapse;
-}
+.detail-content {
+    h1 {
+        border-bottom   : 1px solid #1e90ff;
+        // text-align   : center;
+        color           : #1e90ff;
+    }
 
-table.hovertable th {
-    background-color: #c3dde0;
-    border-width    : 1px;
-    padding         : 8px;
-    border-style    : solid;
-    border-color    : #a9c6c9;
-}
+    h2 {
+        position    : relative;
+        padding-left: 10px;
+        color       : #1e90ff;
 
-table.hovertable tr {
-    background-color: #d4e3e5;
-}
+        &:before {
+            content         : "";
+            width           : 4px;
+            height          : 20px;
+            background-color: #1e90ff;
+            position        : absolute;
+            left            : 0;
+            top             : 5px;
+        }
+    }
 
-table.hovertable td {
-    border-width: 1px;
-    padding     : 8px;
-    border-style: solid;
-    border-color: #a9c6c9;
+
+    h3 {
+        color: #1e90ff;
+    }
+
+
+
+    // 表格主题
+    table {
+        width          : 100%;
+        border-radius  : 2px 2px 0 0;
+        border-collapse: separate;
+        border-spacing : 0;
+        border         : 1px solid #f0f0f0;
+        margin         : 20px auto;
+
+        thead {
+            tr {
+                th {
+                    padding      : 10px 0px;
+                    color        : rgba(0, 0, 0, 0.85);
+                    font-weight  : 500;
+                    text-align   : center;
+                    background   : #fafafa;
+                    border-bottom: 1px solid #f0f0f0;
+
+                }
+            }
+        }
+
+        tbody {
+            &>tr:last-child>td {
+                border-bottom: none !important;
+            }
+
+            tr {
+                td {
+                    text-align   : center;
+                    border-bottom: 1px solid #f0f0f0;
+                    padding      : 10px 0px;
+                }
+            }
+        }
+    }
 }

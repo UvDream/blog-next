@@ -18,8 +18,8 @@ const ArticleDetail = props => {
     let copyText = document.getElementsByClassName("copy");
     for (let i = 0; i < copyText.length; i++) {
       copyText[i].onclick = e => {
-        // console.log(e.target.children[0].innerHTML);
-        var oInput = document.createElement("input");
+        console.log(e.target);
+        var oInput = document.createElement("textarea");
         oInput.value = e.target.children[0].innerHTML;
         document.body.appendChild(oInput);
         oInput.select();

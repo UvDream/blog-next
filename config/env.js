@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-10-09 16:23:07
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2020-03-07 13:55:09
+ * @LastEditTime: 2020-03-07 13:57:16
  * @Description:url
  * @Email: UvDream@163.com
  */
@@ -18,5 +18,5 @@ if (process.env.NODE_ENV == "development") {
   imgUrl=`http://118.25.110.93`
 }
 // 版本
-let version = "0.1.0";
+let version = "0.6.0";
 export { baseUrl, version,imgUrl };

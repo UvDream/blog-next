@@ -1,19 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../static/style/components/header.less";
-import { Row, Col, Menu, Icon } from "antd";
+import { Row, Col, Button, Drawer } from "antd";
 import randomColor from "randomcolor";
-
+import MenusItem from "./Menus";
 import Link from "next/link";
 
 const Header = props => {
-  const [status, setState] = useState(0);
-  useEffect(() => {
-    setState(props.status);
-  }, []);
+  const [draw, setDraw] = useState(false);
+
+  const onClose = () => {
+    setDraw(false);
+  };
+  const drawShow = () => {
+    setDraw(true);
+  };
   return (
     <div className="header">
       <Row type="flex" justify="center" align="middle">
-        <Col xs={24} sm={24} md={10} lg={15} xl={12} className="header-title">
+        <Col xs={21} sm={21} md={10} lg={15} xl={12} className="header-title">
           <Link
             href={{
               pathname: "/"
@@ -23,64 +27,25 @@ const Header = props => {
               <span className="header-logo" style={{ color: randomColor() }}>
                 U世界的V梦想
               </span>
-              <span className="header-text">不专情前端开发的前端工程师</span>
+              <span className="header-text">让技术产生价值!</span>
             </a>
           </Link>
         </Col>
+        <Col xs={3} sm={3} md={0} lg={0} xl={0} style={{ textAlign: "center" }}>
+          <Button icon="unordered-list" onClick={drawShow} />
+        </Col>
         <Col className="header-menus" xs={0} sm={0} md={14} lg={8} xl={6}>
-          <Menu mode="horizontal" selectedKeys={status}>
-            <Menu.Item key="0">
-              <Link
-                href={{
-                  pathname: "/"
-                }}
-              >
-                <a>
-                  <Icon type="home" />
-                  首页
-                </a>
-              </Link>
-            </Menu.Item>
-
-            <Menu.Item key="1">
-              <Link
-                href={{
-                  pathname: "/articleTypes"
-                }}
-              >
-                <a>
-                  <Icon type="tags" />
-                  归档
-                </a>
-              </Link>
-            </Menu.Item>
-            <Menu.Item key="2">
-              <Link
-                href={{
-                  pathname: "/github"
-                }}
-              >
-                <a>
-                  <Icon type="github" />
-                  我的开源
-                </a>
-              </Link>
-            </Menu.Item>
-            <Menu.Item key="3">
-              <Link
-                href={{
-                  pathname: "/aboutMe"
-                }}
-              >
-                <a>
-                  <Icon type="user" />
-                  关于我
-                </a>
-              </Link>
-            </Menu.Item>
-          </Menu>
+          <MenusItem mode={"horizontal"} status={props.status} />
         </Col>
       </Row>
+      <Drawer
+        placement="right"
+        closable={false}
+        onClose={onClose}
+        visible={draw}
+      >
+        <MenusItem mode={"inline"} status={props.status} />
+      </Drawer>
     </div>
   );
 };

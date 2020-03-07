@@ -13,8 +13,12 @@ const AboutMe = () => {
   return (
     <div className="about" style={{ marginTop: "4.5rem" }}>
       <Head>
-        <title>关于我</title>
+        <title>汪中杰的博客-关于我</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content="首页 | 汪中杰的技术博客,让技术产生价值!"
+        />
       </Head>
       <Row className="home-main common-main" type="flex" justify="center">
         <Col

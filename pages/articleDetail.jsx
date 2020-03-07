@@ -67,8 +67,12 @@ const ArticleDetail = props => {
     <div className="detail">
       <BackTop />
       <Head>
-        <title>{props.title}</title>
+        <title>汪中杰的博客-{props.title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content="首页 | 汪中杰的技术博客,让技术产生价值!"
+        />
       </Head>
       <Header></Header>
       <Row className="common-main" type="flex" justify="center">

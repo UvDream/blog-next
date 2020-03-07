@@ -23,8 +23,13 @@ const ArticleTypes = () => {
   return (
     <div className="types" style={{ marginTop: "4.5rem" }}>
       <Head>
-        <title>文章分类</title>
+        <title>汪中杰的博客-文章分类</title>
+
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content="首页 | 汪中杰的技术博客,让技术产生价值!"
+        />
       </Head>
       <Header status={"1"}></Header>
       <Row className="home-main common-main" type="flex" justify="center">

@@ -18,7 +18,7 @@ const ArticleDetail = props => {
     let copyText = document.getElementsByClassName("copy");
     for (let i = 0; i < copyText.length; i++) {
       copyText[i].onclick = e => {
-        console.log(e.target);
+        //console.log(e.target);
         var oInput = document.createElement("textarea");
         oInput.value = e.target.children[0].innerHTML;
         document.body.appendChild(oInput);
@@ -121,8 +121,8 @@ ArticleDetail.getInitialProps = async context => {
   let id = context.query.id;
   const promise = new Promise(resolve => {
     Article.detail({ id: id }).then(res => {
-      console.log("获取文章");
-      console.log(res);
+      //console.log("获取文章");
+      //console.log(res);
       resolve(res.data);
     });
   });

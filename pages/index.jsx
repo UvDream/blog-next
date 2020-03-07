@@ -43,8 +43,8 @@ const Home = () => {
     Article.list({ page: String(page), page_size: String(pageSize) }).then(
       res => {
         if (res.code === 200) {
-          console.log("获取列表数据");
-          console.log(res);
+          //console.log("获取列表数据");
+          //console.log(res);
           setLoading(false);
           setPage(res.data.page);
           setPageSize(res.data.pageSize);

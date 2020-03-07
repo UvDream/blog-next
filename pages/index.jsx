@@ -86,7 +86,7 @@ const Home = () => {
               <Skeleton active />
             </div>
           ) : (
-            <div>
+            <div style={{ padding: "1rem" }}>
               <List
                 header={<div className="home-main-left-header">最新文章</div>}
                 itemLayout="vertical"
@@ -166,7 +166,8 @@ const Home = () => {
             textAlign: "right",
             backgroundColor: "#fff",
             padding: "1rem 0",
-            borderRadius: ".5rem"
+            borderRadius: "1rem",
+            boxShadow: "0 0 1rem rgba(161, 177, 204, .4)"
           }}
         >
           <Pagination

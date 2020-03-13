@@ -96,53 +96,62 @@ const Home = () => {
                 itemLayout="vertical"
                 dataSource={articleList}
                 renderItem={item => (
-                  <List.Item>
-                    {/* 标题 */}
-                    <div className="home-main-left-title">
-                      <Link
-                        href={{
-                          pathname: "/articleDetail",
-                          query: { id: item.ID }
-                        }}
-                      >
-                        <a>{item.title}</a>
-                      </Link>
-                    </div>
-                    {/* tag */}
-                    <div className="home-main-left-tag">
-                      <span>
-                        <Icon type="calendar" />
-                        {dayjs(item.add_time).format("YYYY-MM-DD HH:mm:ss")}
-                      </span>
-                      <span>
-                        <Icon type="tags" />
-                        {item.type_name}
-                      </span>
-                      <span>
-                        <Icon type="fire" />
-                        <CountUp end={item.view_count} />
-                        /人
-                      </span>
-                    </div>
-                    {/* 内容 */}
-                    <div
-                      className="home-main-left-content"
-                      dangerouslySetInnerHTML={{
-                        __html: marked(item.article_content)
-                      }}
-                    ></div>
-                    {/* 查看全文 */}
-                    <div className="home-main-left-btn">
-                      <Link
-                        href={{
-                          pathname: "/articleDetail",
-                          query: { id: item.ID }
-                        }}
-                      >
-                        <a>阅读全文</a>
-                      </Link>
-                    </div>
-                  </List.Item>
+                  <Link
+                    href={{
+                      pathname: "/articleDetail",
+                      query: { id: item.ID }
+                    }}
+                  >
+                    <a>
+                      <List.Item>
+                        {/* 标题 */}
+                        <div className="home-main-left-title">
+                          <Link
+                            href={{
+                              pathname: "/articleDetail",
+                              query: { id: item.ID }
+                            }}
+                          >
+                            <a>{item.title}</a>
+                          </Link>
+                        </div>
+                        {/* tag */}
+                        <div className="home-main-left-tag">
+                          <span>
+                            <Icon type="calendar" />
+                            {dayjs(item.add_time).format("YYYY-MM-DD HH:mm:ss")}
+                          </span>
+                          <span>
+                            <Icon type="tags" />
+                            {item.type_name}
+                          </span>
+                          <span>
+                            <Icon type="fire" />
+                            <CountUp end={item.view_count} />
+                            /人
+                          </span>
+                        </div>
+                        {/* 内容 */}
+                        <div
+                          className="home-main-left-content"
+                          dangerouslySetInnerHTML={{
+                            __html: marked(item.article_content)
+                          }}
+                        ></div>
+                        {/* 查看全文 */}
+                        <div className="home-main-left-btn">
+                          <Link
+                            href={{
+                              pathname: "/articleDetail",
+                              query: { id: item.ID }
+                            }}
+                          >
+                            <a>阅读全文</a>
+                          </Link>
+                        </div>
+                      </List.Item>
+                    </a>
+                  </Link>
                 )}
               />
             </div>

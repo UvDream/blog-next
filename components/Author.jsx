@@ -13,7 +13,7 @@ const Author = () => {
         />
       </div>
       <div className="author-introduction">
-        一个不专情前端的前端工程师
+        让技术产生价值!
         <Divider>社交账号</Divider>
         <Link href="https://github.com/UvDream">
           <a>

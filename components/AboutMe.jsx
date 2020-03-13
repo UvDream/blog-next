@@ -23,22 +23,17 @@ const AboutMeDetail = () => {
             <p>公司:上汽通用有限公司</p>
             <p>职位:前端工程师</p>
           </Panel>
-          <Panel header="2016.11-2017.10" key="2">
+          <Panel header="2016.11-2017.12" key="2">
             <p>公司:上海挺之军有限公司</p>
             <p>职位:前端工程师</p>
             <p>重大项目:上海市绿色账户...</p>
           </Panel>
-          <Panel header="2017.10-2018.10" key="3">
-            <p>公司:上海初米网络</p>
-            <p>职位:前端leader</p>
-            <p>重大项目:网约车管理系统2.0重构前端架构...</p>
-          </Panel>
-          <Panel header="2018.10-2019.6" key="4">
+          <Panel header="2017.12-2019.6" key="3">
             <p>公司:太平洋保险</p>
             <p>职位:前端leader</p>
             <p>重大项目:车险核心业务系统...</p>
           </Panel>
-          <Panel header="2019.6-至今" key="5">
+          <Panel header="2019.6-至今" key="4">
             <p>公司:中科曙光</p>
             <p>职位:前端leader</p>
             <p>重大项目:前后端分离新解决方案....</p>

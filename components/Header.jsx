@@ -24,10 +24,13 @@ const Header = props => {
             }}
           >
             <a>
-              <span className="header-logo" style={{ color: randomColor() }}>
+              <span
+                className="header-logo"
+                style={{ color: randomColor(), paddingLeft: ".4rem" }}
+              >
                 U世界的V梦想
               </span>
-              <span className="header-text">让技术产生价值!</span>
+              {/* <span className="header-text">让技术产生价值!</span> */}
             </a>
           </Link>
         </Col>

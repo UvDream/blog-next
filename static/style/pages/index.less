@@ -4,8 +4,8 @@
     &-main {
 
         &-left {
-            box-shadow   : 0 0 1rem rgba(161, 177, 204, .4);
-            border-radius: 1rem;
+            // box-shadow   : 0 0 1rem rgba(161, 177, 204, .4);
+            border-radius   : 1rem;
 
             &-header {
                 margin-left: 1rem;
@@ -49,6 +49,47 @@
                 text-align   : right;
                 margin-top   : 1rem;
                 padding-right: .5rem;
+            }
+        }
+
+    }
+
+    .block {
+        // outline      : 1px solid red;
+        margin-top      : 1rem;
+        box-shadow      : 0 0 1rem rgba(161, 177, 204, .4);
+        border-radius   : 1rem;
+        background-color: #fff;
+        min-height      : 4rem;
+        padding         : 1rem;
+
+        &-title {
+            height     : 2rem;
+            line-height: 2rem;
+            font-size  : 25px;
+            font-weight: bold;
+            color      : #1890ff;
+        }
+
+        &-tag {
+            margin: .5rem 0;
+            color : #ccc;
+
+            &>span {
+                margin-right: .5rem;
+            }
+        }
+
+        &-content {
+            max-height        : 13rem;
+            overflow          : hidden;
+            text-overflow     : ellipsis;
+            display           : -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 10;
+
+            img {
+                width: 100%;
             }
         }
 

@@ -73,7 +73,7 @@ const Home = () => {
       <Header status={"0"}></Header>
       <Row className="home-main common-main" type="flex" justify="center">
         <Col
-          className="home-main-left common-left"
+          className="home-main-left "
           xs={24}
           sm={24}
           md={16}
@@ -90,12 +90,9 @@ const Home = () => {
               <Skeleton active />
             </div>
           ) : (
-            <div style={{ padding: "1rem" }}>
-              <List
-                header={<div className="home-main-left-header">最新文章</div>}
-                itemLayout="vertical"
-                dataSource={articleList}
-                renderItem={item => (
+            <div>
+              {articleList.map((item, index) => {
+                return (
                   <Link
                     href={{
                       pathname: "/articleDetail",
@@ -103,23 +100,12 @@ const Home = () => {
                     }}
                   >
                     <a>
-                      <List.Item>
-                        {/* 标题 */}
-                        <div className="home-main-left-title">
-                          <Link
-                            href={{
-                              pathname: "/articleDetail",
-                              query: { id: item.ID }
-                            }}
-                          >
-                            <a>{item.title}</a>
-                          </Link>
-                        </div>
-                        {/* tag */}
-                        <div className="home-main-left-tag">
+                      <div className="block">
+                        <div className="block-title">{item.title}</div>
+                        <div className="block-tag">
                           <span>
                             <Icon type="calendar" />
-                            {dayjs(item.add_time).format("YYYY-MM-DD HH:mm:ss")}
+                            {dayjs(item.add_time).format("YYYY-MM-DD HH:mm")}
                           </span>
                           <span>
                             <Icon type="tags" />
@@ -131,29 +117,17 @@ const Home = () => {
                             /人
                           </span>
                         </div>
-                        {/* 内容 */}
                         <div
-                          className="home-main-left-content"
+                          className="block-content"
                           dangerouslySetInnerHTML={{
                             __html: marked(item.article_content)
                           }}
                         ></div>
-                        {/* 查看全文 */}
-                        <div className="home-main-left-btn">
-                          <Link
-                            href={{
-                              pathname: "/articleDetail",
-                              query: { id: item.ID }
-                            }}
-                          >
-                            <a>阅读全文</a>
-                          </Link>
-                        </div>
-                      </List.Item>
+                      </div>
                     </a>
                   </Link>
-                )}
-              />
+                );
+              })}
             </div>
           )}
         </Col>

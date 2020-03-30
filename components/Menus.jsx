@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Menu, Icon } from "antd";
 import Link from "next/link";
-import { imgUrl } from "../config/env";
+import { adminUrl } from "../config/env";
 const MenusItem = props => {
   const [status, setStatus] = useState(0);
   useEffect(() => {
@@ -59,7 +59,7 @@ const MenusItem = props => {
         </Link>
       </Menu.Item>
       <Menu.Item key="4">
-        <a href={imgUrl + "/admin"}>
+        <a href={adminUrl + "/admin"}>
           <Icon type="edit" />
           后台管理
         </a>

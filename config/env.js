@@ -19,4 +19,4 @@ if (process.env.NODE_ENV == "development") {
 }
 // 版本
 let version = "0.7.1";
-export { baseUrl, version,imgUrl };
+export { baseUrl, version,imgUrl,adminUrl };

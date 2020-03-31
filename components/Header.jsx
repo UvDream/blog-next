@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../static/style/components/header.less";
 import { Row, Col, Button, Drawer } from "antd";
 import randomColor from "randomcolor";
@@ -7,7 +7,16 @@ import Link from "next/link";
 
 const Header = props => {
   const [draw, setDraw] = useState(false);
-
+  useEffect(() => {
+    console.log(`
+    ██╗   ██╗██╗   ██╗██████╗ ██████╗ ███████╗ █████╗ ███╗   ███╗
+    ██║   ██║██║   ██║██╔══██╗██╔══██╗██╔════╝██╔══██╗████╗ ████║
+    ██║   ██║██║   ██║██║  ██║██████╔╝█████╗  ███████║██╔████╔██║
+    ██║   ██║╚██╗ ██╔╝██║  ██║██╔══██╗██╔══╝  ██╔══██║██║╚██╔╝██║
+    ╚██████╔╝ ╚████╔╝ ██████╔╝██║  ██║███████╗██║  ██║██║ ╚═╝ ██║
+     ╚═════╝   ╚═══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝
+ `);
+  }, []);
   const onClose = () => {
     setDraw(false);
   };

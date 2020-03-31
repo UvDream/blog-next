@@ -1,10 +1,13 @@
 import { Avatar, Divider, Tooltip } from "antd";
 import Link from "next/link";
-
+import { Color } from "../config/env";
 import "../static/style/components/author.less";
 const Author = () => {
   return (
-    <div className="author common-box">
+    <div
+      className="author common-box"
+      style={{ backgroundColor: Color.bgColor, color: Color.textColor }}
+    >
       <div className="author-avatar">
         <Avatar
           size={100}
@@ -14,7 +17,11 @@ const Author = () => {
       </div>
       <div className="author-introduction">
         让技术产生价值!
-        <Divider>社交账号</Divider>
+        <Divider
+          style={{ backgroundColor: Color.bgColor, color: Color.textColor }}
+        >
+          社交账号
+        </Divider>
         <Link href="https://github.com/UvDream">
           <a>
             <Tooltip title="github:UvDream">

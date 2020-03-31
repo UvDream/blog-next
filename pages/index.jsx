@@ -10,6 +10,7 @@ import marked from "marked";
 import hljs from "highlight.js";
 import CountUp from "react-countup";
 import Footer from "../components/Footer";
+import { Color } from "../config/env";
 
 import "../static/style/pages/theme.less";
 import "../static/style/pages/index.less";
@@ -61,7 +62,14 @@ const Home = () => {
   };
 
   return (
-    <div className="home" style={{ marginTop: "4.5rem" }}>
+    <div
+      className="home"
+      style={{
+        marginTop: "4.5rem",
+        backgroundColor: Color.otherColor,
+        color: Color.textColor
+      }}
+    >
       <Head>
         <title>汪中杰的博客-首页</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -94,13 +102,20 @@ const Home = () => {
               {articleList.map((item, index) => {
                 return (
                   <Link
+                    key={index}
                     href={{
                       pathname: "/articleDetail",
                       query: { id: item.ID }
                     }}
                   >
                     <a>
-                      <div className="block">
+                      <div
+                        className="block"
+                        style={{
+                          backgroundColor: Color.bgColor,
+                          color: Color.textColor
+                        }}
+                      >
                         <div className="block-title">{item.title}</div>
                         <div className="block-tag">
                           <span>
@@ -154,7 +169,9 @@ const Home = () => {
             backgroundColor: "#fff",
             padding: "1rem 0",
             borderRadius: "1rem",
-            boxShadow: "0 0 1rem rgba(161, 177, 204, .4)"
+            boxShadow: "0 0 1rem rgba(161, 177, 204, .4)",
+            backgroundColor: Color.bgColor,
+            color: Color.textColor
           }}
         >
           <Pagination

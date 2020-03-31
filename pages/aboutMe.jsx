@@ -6,6 +6,7 @@ import Head from "next/head";
 import Footer from "../components/Footer";
 import Author from "../components/Author";
 import AboutMeDetail from "../components/AboutMe";
+import { Color } from "../config/env";
 
 import "../static/style/pages/about-me.less";
 
@@ -28,6 +29,7 @@ const AboutMe = () => {
           md={16}
           lg={18}
           xl={14}
+          style={{ backgroundColor: Color.bgColor }}
         >
           <AboutMeDetail />
         </Col>

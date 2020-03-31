@@ -6,6 +6,7 @@ import { Row, Col } from "antd";
 import ReactWordcloud from "react-wordcloud";
 import Footer from "../components/Footer";
 import Article from "../api/article/index";
+
 import "../static/style/pages/article-types.less";
 const ArticleTypes = () => {
   useEffect(() => {

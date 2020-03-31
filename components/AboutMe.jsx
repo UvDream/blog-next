@@ -1,11 +1,13 @@
 import React from "react";
+import { Color } from "../config/env";
+
 import { Divider, Collapse } from "antd";
 const { Panel } = Collapse;
 const AboutMeDetail = () => {
   const text = "wenzi1";
   return (
-    <div className="me">
-      <Divider>个人介绍</Divider>
+    <div className="me" style={{ color: Color.textColor }}>
+      <Divider style={{ color: Color.textColor }}>个人介绍</Divider>
       <div style={{ paddingLeft: "2rem" }}>
         <div>姓名:汪中杰</div>
         <div>职业:前端工程师</div>
@@ -16,7 +18,7 @@ const AboutMeDetail = () => {
           <a href="https://github.com/UvDream">UvDream</a>
         </div>
       </div>
-      <Divider>个人经历</Divider>
+      <Divider style={{ color: Color.textColor }}>个人经历</Divider>
       <div style={{ padding: "2rem 2rem" }}>
         <Collapse defaultActiveKey={["5"]}>
           <Panel header="2016.7-2016.10" key="1">

@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import Author from "../components/Author";
 import randomColor from "randomcolor";
 import Others from "../api/other/index";
+import { Color } from "../config/env";
 
 import "../static/style/pages/github.less";
 const Github = () => {
@@ -42,10 +43,13 @@ const Github = () => {
           lg={18}
           xl={14}
           style={{
-            padding: "1rem"
+            padding: "1rem",
+            backgroundColor: Color.bgColor,
+            color: Color.textColor
           }}
         >
           <List
+            style={{ color: Color.textColor }}
             header={<div className="github-title">我在github上的开源项目</div>}
             itemLayout="vertical"
             dataSource={tableData}
@@ -57,7 +61,11 @@ const Github = () => {
                     style={{ fontSize: "1.2rem" }}
                     className="github-header-title"
                   >
-                    <a href={item.url} target="_blank">
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      style={{ color: Color.textColor }}
+                    >
                       {item.name}
                     </a>
                   </Col>

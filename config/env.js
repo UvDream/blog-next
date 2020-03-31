@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-10-09 16:23:07
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2020-03-31 15:32:27
+ * @LastEditTime: 2020-03-31 15:54:17
  * @Description:url
  * @Email: UvDream@163.com
  */
@@ -20,11 +20,11 @@ if (process.env.NODE_ENV == "development") {
   adminUrl=`http://118.25.110.93:4200`
 }
 // 暗黑主题
-if(dayjs().hour()<8){
+if(dayjs().hour()>8 && dayjs().hour()<=18){
   Color.bgColor="#fff" ,Color.textColor="#000",Color.otherColor="#F5F5F5"
 }else{
   Color.bgColor="#000" ,Color.textColor="#fff",Color.otherColor="#000"
 }
 // 版本
-let version = "0.7.1";
+let version = "0.8.0";
 export { baseUrl, version,imgUrl,adminUrl,Color};

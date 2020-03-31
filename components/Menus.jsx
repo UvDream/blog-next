@@ -59,7 +59,7 @@ const MenusItem = props => {
         </Link>
       </Menu.Item>
       <Menu.Item key="4">
-        <a href={adminUrl + "/admin"}>
+        <a href={adminUrl}>
           <Icon type="edit" />
           后台管理
         </a>

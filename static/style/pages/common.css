@@ -1,0 +1,29 @@
+.common-left {
+  background-color: #FFF;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  border: 1px solid #eee;
+}
+.common-main {
+  margin-top: 0.5rem;
+}
+.common-box {
+  background-color: #FFF;
+  margin-left: 0.5rem;
+  padding: 0.3rem;
+  box-shadow: 0 0 1rem rgba(161, 177, 204, 0.4);
+  border-radius: 1rem;
+  border: 1px solid #eee;
+}
+pre {
+  display: block;
+  background-color: #f8f8f8 !important;
+  padding: 0.5rem !important;
+  overflow-y: auto;
+  font-weight: 300;
+  font-family: Menlo, monospace;
+  border-radius: 0.3rem;
+}
+.ant-menu-horizontal {
+  border-bottom: none;
+}

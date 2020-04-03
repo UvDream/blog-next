@@ -19,6 +19,7 @@ const Footer = () => {
         </Link>
       </div>
       <div>系统由Golang+React+Ant Design驱动 By wangzhongjie</div>
+      <div>苏ICP备20016784</div>
     </div>
   );
 };

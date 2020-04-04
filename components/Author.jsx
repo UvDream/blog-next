@@ -25,15 +25,17 @@ const Author = () => {
         <Link href="https://github.com/UvDream">
           <a>
             <Tooltip title="github:UvDream">
-              <Avatar size={28} icon="github" className="account" />
+              <Avatar size={28} icon="github" />
             </Tooltip>
           </a>
         </Link>
+        &#x3000;
         <Tooltip title="qq:913906565">
-          <Avatar size={28} icon="qq" className="account" />
+          <Avatar size={28} icon="qq" />
         </Tooltip>
+        &#x3000;
         <Tooltip title="wx:wzj913906565">
-          <Avatar size={28} icon="wechat" className="account" />
+          <Avatar size={28} icon="wechat" />
         </Tooltip>
       </div>
     </div>

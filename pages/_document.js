@@ -18,7 +18,7 @@ export default class MyDocument extends Document {
           content="首页 | 汪中杰的技术博客,让技术产生价值!"
         />
         </Head>
-        <body className="custom_class" style={{backgroundColor:Color.otherColor}}  >
+        <body className="custom_class gray-filter" style={{backgroundColor:Color.otherColor}}  >
           <Main />
           <NextScript />
         </body>

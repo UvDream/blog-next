@@ -2559,6 +2559,11 @@ devalue@2.0.1:
   resolved "https://registry.npm.taobao.org/devalue/download/devalue-2.0.1.tgz#5d368f9adc0928e47b77eea53ca60d2f346f9762"
   integrity sha1-XTaPmtwJKOR7d+6lPKYNLzRvl2I=
 
+diff-match-patch@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/diff-match-patch/-/diff-match-patch-1.0.4.tgz#6ac4b55237463761c4daf0dc603eb869124744b1"
+  integrity sha512-Uv3SW8bmH9nAtHKaKSanOQmj2DnlH65fUpcrMdfdaOxUG02QQ4YGZ8AE7kKOMisF7UqvOlGKVYWRvezdncW9lg==
+
 diffie-hellman@^5.0.0:
   version "5.0.3"
   resolved "https://registry.npm.taobao.org/diffie-hellman/download/diffie-hellman-5.0.3.tgz#40e8ee98f55a2149607146921c63e1ae5f3d2875"
@@ -5465,6 +5470,11 @@ rc-animate@^3.0.0-rc.1:
     rc-util "^4.5.0"
     react-lifecycles-compat "^3.0.4"
 
+rc-async-component@^1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/rc-async-component/-/rc-async-component-1.1.7.tgz#b6607947b8fb006caf2673327100446b6e8c187c"
+  integrity sha512-lOgI1Raeimi5IWciVtx1O6gf/T/BsFTu6Pd0Cw6OtL8hHg76SNEkhXMj1TTDNb4FSrq4Zgtg1oSJcZG50axFwg==
+
 rc-calendar@~9.15.7:
   version "9.15.9"
   resolved "https://registry.npm.taobao.org/rc-calendar/download/rc-calendar-9.15.9.tgz?cache=0&sync_timestamp=1577243142734&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Frc-calendar%2Fdownload%2Frc-calendar-9.15.9.tgz#7a3457ee10f27b9972a755fe6415ef352f01a97a"
@@ -6958,6 +6968,13 @@ vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.npm.taobao.org/vary/download/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
+
+vditor@^3.0.12:
+  version "3.0.12"
+  resolved "https://registry.yarnpkg.com/vditor/-/vditor-3.0.12.tgz#b2098f380248075800af8ed59eb3d9902b0840e5"
+  integrity sha512-C/o5buMesljrbvqLg/dcwEv9VIrh+x19uxBEdipXXKzDXhrfAifoHeNbb76D0MEl33QSxqkFAcGjy4yFHZA4lw==
+  dependencies:
+    diff-match-patch "^1.0.4"
 
 verror@1.10.0:
   version "1.10.0"

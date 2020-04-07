@@ -9,15 +9,18 @@ import Footer from "../components/Footer";
 import marked from "marked";
 import hljs from "highlight.js";
 import dayjs from "dayjs";
-
-import "../static/style/pages/theme.less";
+import dynamic from "next/dynamic";
+const Vditor = dynamic(import("../components/vditor"), {
+  ssr: false,
+});
+// import "../static/style/pages/theme.less";
 import "../static/style/pages/article-detail.less";
 
-const ArticleDetail = props => {
+const ArticleDetail = (props) => {
   useEffect(() => {
     let copyText = document.getElementsByClassName("copy");
     for (let i = 0; i < copyText.length; i++) {
-      copyText[i].onclick = e => {
+      copyText[i].onclick = (e) => {
         //console.log(e.target);
         var oInput = document.createElement("textarea");
         oInput.value = e.target.children[0].innerHTML;
@@ -42,11 +45,11 @@ const ArticleDetail = props => {
     breaks: false,
     smartLists: true,
     smartypants: false,
-    highlight: function(code) {
+    highlight: function (code) {
       return hljs.highlightAuto(code).value;
-    }
+    },
   });
-  renderer.heading = function(text, level, raw) {
+  renderer.heading = function (text, level, raw) {
     const anchor = tocify.add(text, level);
     return `<a id="${anchor}" href="#${anchor}" class="anchor-fix"><h${level}>${text}</h${level}></a>\n`;
   };
@@ -97,10 +100,11 @@ const ArticleDetail = props => {
             </span>
           </div>
           {/* 内容 */}
-          <div
+          {/* <div
             className="detail-content"
             dangerouslySetInnerHTML={{ __html: html }}
-          ></div>
+          ></div> */}
+          <Vditor mdContent={props.article_content} />
         </Col>
         <Col className="common-right" xs={0} sm={0} md={7} lg={5} xl={4}>
           <Author />
@@ -117,10 +121,10 @@ const ArticleDetail = props => {
     </div>
   );
 };
-ArticleDetail.getInitialProps = async context => {
+ArticleDetail.getInitialProps = async (context) => {
   let id = context.query.id;
-  const promise = new Promise(resolve => {
-    Article.detail({ id: id }).then(res => {
+  const promise = new Promise((resolve) => {
+    Article.detail({ id: id }).then((res) => {
       //console.log("获取文章");
       //console.log(res);
       resolve(res.data);

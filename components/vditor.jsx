@@ -9,16 +9,15 @@ class vditor extends Component {
     };
   }
   componentDidMount() {
-    console.log("xxxxxxxxx");
-    console.log(this.props);
-    console.log(this.state.content);
     Vditor.preview(document.getElementById("htmlView"), this.props.mdContent, {
       speech: {
         enable: true,
       },
       anchor: true,
       hljs: {
+        enable: true,
         lineNumber: true,
+        style: "native",
       },
       markdown: {
         // toc: true

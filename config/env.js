@@ -2,11 +2,12 @@
  * @Author: wangzhongjie
  * @Date: 2019-10-09 16:23:07
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2020-04-07 20:52:23
+ * @LastEditTime: 2020-04-07 21:29:45
  * @Description:url
  * @Email: UvDream@163.com
  */
 import dayjs from "dayjs";
+import { version } from '../package.json';
 let baseUrl = "",adminUrl="", imgUrl = "",Color={
   bgColor:"#000",textColor:"#fff",otherColor:"#000"
 };
@@ -25,6 +26,5 @@ if(dayjs().hour()>18 ){
 }else{
   Color.bgColor="#000" ,Color.textColor="#fff",Color.otherColor="#000"
 }
-// 版本
-let version = "0.8.0";
+
 export { baseUrl, version,imgUrl,adminUrl,Color};

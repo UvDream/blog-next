@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-10-09 16:23:07
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2020-04-22 15:10:54
+ * @LastEditTime: 2020-04-22 21:01:36
  * @Description:url
  * @Email: UvDream@163.com
  */
@@ -16,7 +16,7 @@ if (process.env.NODE_ENV == "development") {
   baseUrl = `http://localhost:8000`; //开发环境地址
   imgUrl=`http://localhost:3001`
 } else if (process.env.NODE_ENV == "production") {
-  baseUrl = `http://uvdream.cn:8000`; //生产环境地址
+  baseUrl = `http://118.25.110.93:8000`; //生产环境地址
   imgUrl=`http://118.25.110.93`
   adminUrl=`http://118.25.110.93:4200`
 }

@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
           name="description"
           content="首页 | 汪中杰的技术博客,让技术产生价值!"
         />
-        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>
+        {/* <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta> */}
         </Head>
         <body className="custom_class gray-filter" style={{backgroundColor:Color.otherColor}}  >
           <Main />

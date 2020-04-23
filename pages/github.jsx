@@ -7,7 +7,6 @@ import Footer from "../components/Footer";
 import Author from "../components/Author";
 import randomColor from "randomcolor";
 import Others from "../api/other/index";
-import { Color } from "../config/env";
 
 import "../static/style/pages/github.less";
 const Github = () => {
@@ -17,7 +16,7 @@ const Github = () => {
   }, []);
   // 获取列表
   const getList = () => {
-    Others.list().then(res => {
+    Others.list().then((res) => {
       if (res.code === 200) {
         setTableData(res.data);
       }
@@ -44,16 +43,13 @@ const Github = () => {
           xl={14}
           style={{
             padding: "1rem",
-            backgroundColor: Color.bgColor,
-            color: Color.textColor
           }}
         >
           <List
-            style={{ color: Color.textColor }}
             header={<div className="github-title">我在github上的开源项目</div>}
             itemLayout="vertical"
             dataSource={tableData}
-            renderItem={item => (
+            renderItem={(item) => (
               <List.Item>
                 <Row style={{ width: "100%" }}>
                   <Col
@@ -61,11 +57,7 @@ const Github = () => {
                     style={{ fontSize: "1.2rem" }}
                     className="github-header-title"
                   >
-                    <a
-                      href={item.url}
-                      target="_blank"
-                      style={{ color: Color.textColor }}
-                    >
+                    <a href={item.url} target="_blank">
                       {item.name}
                     </a>
                   </Col>

@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "build": "next build",
     "start": "next start",
-    "build": "next build && PORT=3000 npm start",
+    "deploy": "next build && PORT=3000 npm start",
     "export": "next export"
   },
   "dependencies": {

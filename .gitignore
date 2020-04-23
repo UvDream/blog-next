@@ -1,5 +1,6 @@
-out/
+/out
 node_modules
 /.next
 package-lock.json
 yarn-error.log
+yarn.json

@@ -11,7 +11,7 @@ const Author = () => {
       <div className="author-avatar">
         <Avatar
           size={100}
-          src="http://118.25.110.93:81/images/avatar.jpeg"
+          src="https://www.uvdream.cn/images/avatar.jpeg"
           alt="头像"
         />
       </div>

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
 import Header from "../components/Header";
-import { Row, Col, Icon, Affix, BackTop, message } from "antd";
+import { Row, Col, Icon, Affix, message } from "antd";
 import Author from "../components/Author";
 import Article from "../api/article/index";
 import Tocify from "../components/tocify.tsx";
@@ -10,6 +10,8 @@ import marked from "marked";
 import hljs from "highlight.js";
 import dayjs from "dayjs";
 import dynamic from "next/dynamic";
+import ChangeTheme from "../components/changeTheme";
+
 const Vditor = dynamic(import("../components/vditor"), {
   ssr: false,
 });
@@ -68,7 +70,6 @@ const ArticleDetail = (props) => {
 
   return (
     <div className="detail">
-      <BackTop />
       <Head>
         <title>汪中杰的博客-{props.title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -87,6 +88,7 @@ const ArticleDetail = (props) => {
           lg={18}
           xl={14}
         >
+          <ChangeTheme />
           {/* 标题 */}
           <div className="detail-title">{props.title}</div>
           {/* tag */}

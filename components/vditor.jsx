@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Vditor from "vditor";
-import "vditor/dist/index.css";
+import "../static/style/components/vditor.css";
 import "../static/style/components/vditor.less";
 class vditor extends Component {
   constructor(props) {

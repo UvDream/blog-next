@@ -3,8 +3,8 @@ import { BackTop, Popover } from "antd";
 import { changeTheme } from "../util/util";
 import "../static/style/pages/common.less";
 const ChangeTheme = () => {
-  const themeChange = () => {
-    changeTheme(2);
+  const themeChange = (id) => {
+    changeTheme(id);
   };
 
   return (
@@ -14,7 +14,12 @@ const ChangeTheme = () => {
           <span className="icon iconfont huidaodingbu"></span>
         </div>
       </BackTop>
-      <div className="theme-change" onClick={themeChange}>
+      <div
+        className="theme-change"
+        onClick={() => {
+          themeChange(2);
+        }}
+      >
         <span className="icon iconfont zhuti"></span>
       </div>
     </div>

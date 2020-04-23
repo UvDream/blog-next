@@ -11,6 +11,7 @@ import hljs from "highlight.js";
 import CountUp from "react-countup";
 import Footer from "../components/Footer";
 import { Color } from "../config/env";
+import ChangeTheme from "../components/changeTheme";
 
 import "../static/style/pages/theme.less";
 import "../static/style/pages/index.less";
@@ -26,9 +27,9 @@ const Home = () => {
     breaks: false,
     smartLists: true,
     smartypants: false,
-    highlight: function(code) {
+    highlight: function (code) {
       return hljs.highlightAuto(code).value;
-    }
+    },
   });
   const [articleList, setArticleList] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -42,7 +43,7 @@ const Home = () => {
   const getList = (page, pageSize) => {
     setLoading(true);
     Article.list({ page: String(page), page_size: String(pageSize) }).then(
-      res => {
+      (res) => {
         if (res.code === 200) {
           //console.log("获取列表数据");
           //console.log(res);
@@ -67,7 +68,7 @@ const Home = () => {
       style={{
         marginTop: "4.5rem",
         backgroundColor: Color.otherColor,
-        color: Color.textColor
+        color: Color.textColor,
       }}
     >
       <Head>
@@ -88,6 +89,7 @@ const Home = () => {
           lg={18}
           xl={14}
         >
+          <ChangeTheme />
           {loading ? (
             <div style={{ padding: "0 20px" }}>
               <Skeleton active />
@@ -105,17 +107,11 @@ const Home = () => {
                     key={index}
                     href={{
                       pathname: "/articleDetail",
-                      query: { id: item.ID }
+                      query: { id: item.ID },
                     }}
                   >
                     <a>
-                      <div
-                        className="block"
-                        style={{
-                          backgroundColor: Color.bgColor,
-                          color: Color.textColor
-                        }}
-                      >
+                      <div className="block">
                         <div className="block-title">{item.title}</div>
                         <div className="block-tag">
                           <span>
@@ -135,7 +131,7 @@ const Home = () => {
                         <div
                           className="block-content"
                           dangerouslySetInnerHTML={{
-                            __html: marked(item.article_content)
+                            __html: marked(item.article_content),
                           }}
                         ></div>
                       </div>
@@ -171,13 +167,13 @@ const Home = () => {
             borderRadius: "1rem",
             boxShadow: "0 0 1rem rgba(161, 177, 204, .4)",
             backgroundColor: Color.bgColor,
-            color: Color.textColor
+            color: Color.textColor,
           }}
         >
           <Pagination
             total={totalSize}
             showSizeChanger
-            showTotal={total => `总共 ${total} /条数据`}
+            showTotal={(total) => `总共 ${total} /条数据`}
             pageSize={pageSize}
             onShowSizeChange={paginationChange}
             onChange={paginationChange}

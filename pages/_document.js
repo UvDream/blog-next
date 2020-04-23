@@ -1,12 +1,10 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import {Color} from "../config/env"
-
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx)
     return { ...initialProps }
   }
-
   render() {
     return (
       <html  lang="zh-cmn-Hans" style={{backgroundColor:Color.otherColor}} >

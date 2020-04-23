@@ -1,6 +1,13 @@
+@import url("../../style/pages/theme.less");
+
 .author {
-    // margin-top: 1rem;
-    text-align   : center;
+    // margin-top   : 1rem;
+    background-color: var(--bgColor);
+    text-align      : center;
+    border-radius   : 1rem;
+    padding         : 1rem;
+    margin          : 10px 10px;
+    box-shadow      : 0 0 1rem rgba(161, 177, 204, 0.4);
 
     &-avatar {
         margin-bottom: 1rem;
@@ -9,7 +16,7 @@
 
     &-introduction {
         font-size    : .8rem;
-        color        : #999;
+        color        : var(--textColor);
         margin-bottom: 1rem;
     }
 }

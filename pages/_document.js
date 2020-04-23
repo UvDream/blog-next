@@ -8,7 +8,6 @@ export default class MyDocument extends Document {
     return (
       <html  lang="zh-cmn-Hans"  >
         <Head>
-        <title>汪中杰的博客</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
           name="description"

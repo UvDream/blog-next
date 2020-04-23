@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Button } from "antd";
+import React from "react";
+import { Button, BackTop } from "antd";
 import { changeTheme } from "../util/util";
 import "../static/style/pages/common.less";
 const ChangeTheme = () => {
@@ -8,7 +8,8 @@ const ChangeTheme = () => {
     changeTheme(2);
   };
   return (
-    <div>
+    <div className="theme">
+      <BackTop />
       <Button type="primary" onClick={themeChange}>
         切换主题
       </Button>

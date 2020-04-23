@@ -1,5 +1,4 @@
 import Document, { Head, Main, NextScript } from 'next/document'
-import {Color} from "../config/env"
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx)
@@ -7,7 +6,7 @@ export default class MyDocument extends Document {
   }
   render() {
     return (
-      <html  lang="zh-cmn-Hans" style={{backgroundColor:Color.otherColor}} >
+      <html  lang="zh-cmn-Hans"  >
         <Head>
         <title>汪中杰的博客</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -16,7 +15,7 @@ export default class MyDocument extends Document {
           content="首页 | 汪中杰的技术博客,让技术产生价值!"
         />
         </Head>
-        <body className="custom_class gray-filter" style={{backgroundColor:Color.otherColor}}  >
+        <body className="custom_class gray-filter"  >
           <Main />
           <NextScript />
         </body>

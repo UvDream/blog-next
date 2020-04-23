@@ -1,5 +1,8 @@
+@import url("../pages/theme.less");
+
 .detail {
-    margin-top: 4.5rem;
+    margin-top      : 4rem;
+    background-color: var(--grayBgColor);
 
     img {
         width: 100%;
@@ -28,6 +31,13 @@
 
     &-content {
         padding: 1rem;
+
+        &-left {
+            background-color: var(--bgColor);
+            border-radius   : 2rem;
+            box-shadow      : 0 0 1rem rgba(161, 177, 204, 0.4);
+        }
+
     }
 
     // 导航

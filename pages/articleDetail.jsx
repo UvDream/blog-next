@@ -78,8 +78,15 @@ const ArticleDetail = (props) => {
         />
       </Head>
       <Header></Header>
-      <Row className="common-main" type="flex" justify="center">
-        <Col className=" common-left" xs={24} sm={24} md={16} lg={18} xl={14}>
+      <Row className="detail-content" type="flex" justify="center">
+        <Col
+          className=" detail-content-left"
+          xs={24}
+          sm={24}
+          md={16}
+          lg={18}
+          xl={14}
+        >
           {/* 标题 */}
           <div className="detail-title">{props.title}</div>
           {/* tag */}

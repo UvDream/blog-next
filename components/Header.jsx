@@ -3,11 +3,16 @@ import "../static/style/components/header.less";
 import { Row, Col, Button, Drawer } from "antd";
 import randomColor from "randomcolor";
 import MenusItem from "./Menus";
+import { iconfontUrl, iconfontVersion } from "../config/env";
+import { loadStyle } from "../util/util";
 import Link from "next/link";
 
-const Header = props => {
+const Header = (props) => {
   const [draw, setDraw] = useState(false);
   useEffect(() => {
+    iconfontVersion.forEach((ele) => {
+      loadStyle(iconfontUrl.replace("$key", ele));
+    });
     console.log(`
     ██╗   ██╗██╗   ██╗██████╗ ██████╗ ███████╗ █████╗ ███╗   ███╗
     ██║   ██║██║   ██║██╔══██╗██╔══██╗██╔════╝██╔══██╗████╗ ████║
@@ -29,7 +34,7 @@ const Header = props => {
         <Col xs={21} sm={21} md={10} lg={15} xl={12} className="header-title">
           <Link
             href={{
-              pathname: "/"
+              pathname: "/",
             }}
           >
             <a>

@@ -1,6 +1,8 @@
+@import url("../pages/theme.less");
+
 .header {
     height             : 4rem;
-    background-color   : #fff;
+    background-color   : var(--bgColor);
     // border-bottom   : 1px solid rgb(228, 219, 219);
     box-shadow         : 0 0 1rem rgba(161, 177, 204, .4);
     line-height        : 4rem;
@@ -25,6 +27,19 @@
         text-overflow: ellipsis;
         white-space  : nowrap;
     }
+
+    &-icon {
+        background-color: var(--bgColor);
+        color           : var(--textColor);
+    }
+}
+
+.ant-menu {
+    background-color: var(--bgColor) !important;
+}
+
+.ant-menu-horizontal>.ant-menu-item>a {
+    color: red;
 }
 
 .ant-menu-horizontal {

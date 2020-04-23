@@ -10,20 +10,30 @@
         background-color: var(--bgColor);
         min-height      : 4rem;
         padding         : 1rem;
+        border          : 1px solid var(--borderColor);
 
         &-title {
-            height     : 2rem;
-            line-height: 2rem;
-            font-size  : 25px;
-            font-weight: bold;
-            color      : var(--themeColor);
+            height       : 2rem;
+            line-height  : 2rem;
+            font-size    : 25px;
+            font-weight  : bold;
+            color        : var(--themeColor);
+            overflow     : hidden;
+            text-overflow: ellipsis;
+            white-space  : nowrap;
         }
 
         &-tag {
-            margin: .5rem 0;
-            color : var(--textColor);
+            display    : flex;
+            align-items: center;
+            margin     : .5rem 0;
+            color      : var(--textColor);
 
-            &>span {
+            &-icon {
+                margin-right: .2rem;
+            }
+
+            &>div {
                 margin-right: .5rem;
             }
         }

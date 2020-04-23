@@ -41,12 +41,15 @@ const Header = (props) => {
               <span className="header-logo" style={{ color: randomColor() }}>
                 U世界的V梦想
               </span>
-              {/* <span className="header-text">让技术产生价值!</span> */}
             </a>
           </Link>
         </Col>
         <Col xs={3} sm={3} md={0} lg={0} xl={0} style={{ textAlign: "center" }}>
-          <Button icon="unordered-list" onClick={drawShow} />
+          <Button
+            icon="unordered-list"
+            className="header-icon"
+            onClick={drawShow}
+          />
         </Col>
         <Col className="header-menus" xs={0} sm={0} md={14} lg={8} xl={6}>
           <MenusItem mode={"horizontal"} status={props.status} />

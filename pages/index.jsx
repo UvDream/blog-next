@@ -91,19 +91,19 @@ const Home = () => {
                       <div className="block">
                         <div className="block-title">{item.title}</div>
                         <div className="block-tag">
-                          <span>
-                            <Icon type="calendar" />
+                          <div>
+                            <Icon type="calendar" className="block-tag-icon" />
                             {dayjs(item.add_time).format("YYYY-MM-DD HH:mm")}
-                          </span>
-                          <span>
-                            <Icon type="tags" />
+                          </div>
+                          <div>
+                            <Icon type="tags" className="block-tag-icon" />
                             {item.type_name}
-                          </span>
-                          <span>
-                            <Icon type="fire" />
+                          </div>
+                          <div>
+                            <Icon type="fire" className="block-tag-icon" />
                             <CountUp end={item.view_count} />
                             /人
-                          </span>
+                          </div>
                         </div>
                       </div>
                     </a>

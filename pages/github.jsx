@@ -41,9 +41,6 @@ const Github = () => {
           md={16}
           lg={18}
           xl={14}
-          style={{
-            padding: "1rem",
-          }}
         >
           <List
             header={<div className="github-title">我在github上的开源项目</div>}
